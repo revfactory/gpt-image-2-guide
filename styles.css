@@ -118,10 +118,49 @@ footer{border-top:1px solid var(--line); padding:30px 20px; text-align:center; c
 .hidden{display:none !important}
 mark{background:color-mix(in srgb,var(--brand) 30%, transparent); color:inherit; padding:0 2px; border-radius:3px}
 
+/* ---------- Case studies (반복 개선) ---------- */
+.cs{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; margin:18px 0; box-shadow:var(--shadow)}
+.cs>h3{margin:0 0 4px; font-size:18.5px; display:flex; align-items:center; gap:8px}
+.cs .hyp{font-size:13.5px; color:var(--ink-soft); margin:0 0 14px}
+.cs .hyp b{color:var(--accent)}
+.cs-cat{margin:30px 0 6px; font-size:20px; display:flex; align-items:center; gap:9px}
+.cs-cat-desc{color:var(--ink-soft); max-width:840px; margin:0 0 6px; font-size:14px}
+.cs-steps{display:flex; gap:12px; align-items:stretch; overflow-x:auto; padding:6px 2px 12px}
+.cs-step{flex:1 1 0; min-width:210px; display:flex; flex-direction:column; background:var(--bg-soft); border:1px solid var(--line); border-radius:13px; overflow:hidden}
+.cs-step.win{border-color:color-mix(in srgb,var(--good) 45%,var(--line))}
+.cs-step.fail{border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
+.cs-step img{width:100%; aspect-ratio:1/1; object-fit:contain; cursor:zoom-in; background:var(--bg-soft)}
+.cs-step.wide img{aspect-ratio:4/3}
+.cs-step.tall img{aspect-ratio:3/4}
+.cs-arrow{align-self:center; color:var(--ink-soft); font-size:20px; flex:0 0 auto; padding:0 2px}
+.cs-step .b{padding:10px 12px; display:flex; flex-direction:column; gap:7px; flex:1}
+.cs-step .stage{font-weight:800; font-size:12px; letter-spacing:.3px}
+.cs-step .verdict{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; width:fit-content}
+.cs-step .verdict.ok{color:var(--good); background:var(--good-bg)}
+.cs-step .verdict.no{color:var(--bad); background:var(--bad-bg)}
+.cs-step code{display:block; background:var(--card); border:1px solid var(--line); padding:7px 9px; border-radius:8px; font-size:11px; line-height:1.5; color:var(--ink-soft); max-height:128px; overflow:auto}
+.cs-step .why{font-size:12px; color:var(--ink-soft)}
+.cs .takeaway{margin-top:12px}
+.cs-copy{align-self:flex-start; font-size:11px; font-weight:700; color:var(--brand); background:var(--brand-soft); border:none; border-radius:7px; padding:5px 10px; cursor:pointer}
+.cs-copy:hover{filter:brightness(.97)}
+
+/* ---------- AI 프롬프트 생성 가이드 ---------- */
+.mp{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:12px; padding:4px 0; margin:14px 0}
+.mp .mp-h{font-weight:700; padding:12px 16px 6px; font-size:14.5px}
+.mp pre{margin:0; padding:0 16px 14px; overflow:auto}
+.mp code{font-family:var(--mono); font-size:12.5px; line-height:1.65; color:var(--ink); white-space:pre-wrap; word-break:break-word}
+.mp-copy{margin:0 16px 14px; font-size:12px; font-weight:700; color:var(--brand); background:var(--brand-soft); border:none; border-radius:8px; padding:7px 13px; cursor:pointer}
+.recipe{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin:14px 0}
+.recipe .slot{background:var(--bg-soft); border:1px solid var(--line); border-radius:11px; padding:11px 13px}
+.recipe .slot b{display:block; font-size:13px; margin-bottom:3px}
+.recipe .slot span{font-size:12px; color:var(--ink-soft)}
+.recipe .slot i{display:block; font-family:var(--mono); font-size:11px; color:var(--accent); margin-top:5px; font-style:normal}
+
 /* ---------- Responsive ---------- */
 @media(max-width:880px){
   .wrap{grid-template-columns:1fr; gap:0}
   nav.side{display:none}
   .compare{grid-template-columns:1fr}
   .top-search input{width:130px}
+  .cs-step{min-width:78%}
 }
